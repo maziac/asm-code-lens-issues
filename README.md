@@ -17,7 +17,7 @@ This was a very extensive change. Almost all of the code was rewritten. Despite 
 - [Dead code detection (unreferenced labels)](#find-dead-code)
 - Completions
 - [Markdown code block highlighting](#syntax-highlighting)
-- Built-in [hexadecimal/decimal calculator](#hexadecimal-calculator)
+- Built-in [hexadecimal calculator](#hexadecimal-calculator)
 
 # New in Version 3.0: Assembler Awareness
 ASM Code Lens 3.0 lets you explicitly **select which assembler syntax is used**, enabling more precise syntax highlighting and parsing.
