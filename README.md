@@ -16,7 +16,7 @@ This was a very extensive change. Almost all of the code was rewritten. Despite 
 - [Code folding](#code-folding)
 - [Dead code detection (unreferenced labels)](#find-dead-code)
 - Completions
-- Markdown code block highlighting (```asm, ```list)
+- [Markdown code block highlighting](#syntax-highlighting)
 - Built-in [hexadecimal/decimal calculator](#hexadecimal-calculator)
 
 # New in Version 3.0: Assembler Awareness
@@ -75,15 +75,18 @@ As a special feature, syntax highlighting also works for code blocks in Markdown
 Just add ```asm-nasm```, ```asm-masm```, ```asm-gas```, or ```asm-sjasmplus``` to your code blocks. You can also use ```asm-z80``` as a synonym for ```asm-sjasmplus```.
 
 Here is an example:
+
 ![](assets/remote/md-code-block.jpg)
 
 
 # Code Lenses
 Code lenses are the core feature of this extension and the reason for its name.
 A code lens displays the number of references above a label name:
+
 ![](assets/remote/code-lense-ref-count.jpg)
 
 Code lenses are a powerful way to quickly see how labels are used and to navigate through the source code:
+
 ![](assets/remote/code-lense.gif)
 
 Note: If a label has a reference count of 0, it is not used anywhere else. That means it is either dead code or unused data.
@@ -93,22 +96,27 @@ The references are then shown in the sidebar instead of inline.
 
 # Outline View
 An outline view of the assembly is shown and can be used for navigation:
+
 ![](assets/remote/outline-view.gif)
 
 # Hovering
 When you hover over labels, the subroutine description is shown if available:
+
 ![](assets/remote/hovering.jpg)
 
 # Open Symbol by Name
 Click in the title bar and enter a symbol prefixed with # to navigate quickly:
+
 ![](assets/remote/symbol-ny-name.jpg)
 
 # Goto Definition
 Right-click a label and select "Go to Definition" to navigate to it:
+
 ![](assets/remote/goto-definition.jpg)
 
 # Rename Label
 Right-click a label, select "Rename Symbol", and choose a new name to rename it in all files:
+
 ![](assets/remote/rename-label.gif)
 
 # Code Folding
@@ -116,11 +124,14 @@ Right-click a label, select "Rename Symbol", and choose a new name to rename it 
 
 # Find Dead Code
 Right-click an assembler file in the text editor and select 'Find Labels with no Reference'
+
 ![](assets/remote/find-labels-with-no-reference.jpg)
+
 to get a list of labels (in the OUTPUT pane) that are not referenced anywhere in the workspace.
 
 This can help you find dead code, because code or data that is not referenced is usually not used, or the label is unnecessary.
 
 # Hexadecimal Calculator
 As an extra, you will find a hexadecimal calculator/converter in the sidebar:
+
 ![](assets/remote/hexcalculator.gif)
