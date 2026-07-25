@@ -1,5 +1,22 @@
-# ASM Code Lens (v3.0)
-ASM Code Lens is a Visual Studio Code extension that enhances working with assembly source code by providing language-server features such as navigation, symbol analysis, and syntax highlighting.
+# Preword: ASM Code Lens becomes NASM Code Lens – a major update
+
+"ASM Code Lens" started as a tool for Z80, but over time it was increasingly used for x86 as well and gained x86 syntax highlighting to match.
+
+However, it became more and more difficult for me to support both worlds — and the various x86 assemblers — with a single one-size-fits-all approach. Since there was no distinction between assemblers, NASM code would end up with Z80 syntax highlighting applied to it, and vice versa.
+
+That was unsatisfying, and I'd wanted to change it for years. Now it's finally here: version 3 brings a major overhaul that does justice to the requirements of the different assemblers while keeping compromises to a minimum.
+
+Since most users work with nasm, this is now reflected in the name too: "ASM Code Lens" becomes "NASM Code Lens" — nasm is now the default assembler.
+
+Other assemblers such as MASM, gas, and sjasmplus are also supported and can be configured globally or per workspace.
+
+Important: Since the extension now distinguishes between assemblers, please check your settings after updating to [make sure the correct assembler is selected for your project](#new-in-version-30-assembler-awareness).
+If you use the NASM assembler it will work out of the box, you don't need to do anything.
+
+
+# Description
+
+NASM Code Lens is a Visual Studio Code extension that enhances working with assembly source code by providing language-server features such as navigation, symbol analysis, and syntax highlighting.
 
 Version 3.0 introduces explicit assembler selection, which enables more accurate syntax highlighting and behavior tailored to the assembler you actually use, even on a per-workspace basis.
 
@@ -20,7 +37,7 @@ This was a very extensive change. Almost all of the code was rewritten. Despite 
 - Built-in [hexadecimal calculator](#hexadecimal-calculator)
 
 # New in Version 3.0: Assembler Awareness
-ASM Code Lens 3.0 lets you explicitly **select which assembler syntax is used**, enabling more precise syntax highlighting and parsing.
+NASM Code Lens 3.0 lets you explicitly **select which assembler syntax is used**, enabling more precise syntax highlighting and parsing.
 
 Supported Assemblers
 
@@ -32,7 +49,6 @@ x86
 Z80
 - sjasmplus
 
-[ii](#new-in-version-30-assembler-awareness)
 **Global and Per-Workspace Configuration**
 
 You can configure the assembler globally or per workspace/project, making it easy to work with multiple codebases that use different assemblers.
@@ -46,14 +62,14 @@ For each assembler you can choose which file extensions are used:
 ![](assets/remote/settings-asm-file-extensions.jpg)
 
 
-If ASM Code Lens version 3 is started for the first time the assembler id is set globally to x86/nasm (language id: asm-x86-nasm).
+If "NASM Code Lens" version 3 is started for the first time the assembler id is set globally to x86/nasm (language id: asm-x86-nasm).
 If you are using some other assembler change it via:
 ![](assets/remote/settings-asm-selection.jpg)
 
 
 # Language Ids
 Some background information:
-ASM Code Lens now uses separate language IDs:
+"NASM Code Lens" now uses separate language IDs:
 - asm-x86-nasm
 - asm-x86-masm
 - asm-x86-gas
@@ -63,7 +79,7 @@ ASM Code Lens now uses separate language IDs:
 This allows each assembler to have its own syntax highlighting rules.
 Before that (v2.x), a shared language ID tried to include the keywords of all assemblers in a single grammar, which caused incorrect highlighting in some cases.
 
-Note: The old language IDs (asm-collection and asm-list-file) have been removed and are no longer valid. ASM Code Lens will automatically migrate them when it starts. Do not use the old language IDs anymore.
+Note: The old language IDs (asm-collection and asm-list-file) have been removed and are no longer valid. "NASM Code Lens" will automatically migrate them when it starts. Do not use the old language IDs anymore.
 
 # Syntax Highlighting
 Syntax highlighting depends on the selected assembler (language ID).
